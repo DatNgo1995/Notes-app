@@ -12,6 +12,7 @@ class App extends Component {
       }
     ]
   };
+  count = 1;
   updateNoteData = newNote => {
     let newNotes = this.state.notes;
     newNotes[newNote.number].title = newNote.data.title;
@@ -27,9 +28,10 @@ class App extends Component {
     });
   }
   newNode = () => {
+    this.count++;
     let newNode = {
       date: new Date().toString(),
-      title: "Sample Note " + this.state.notes.length,
+      title: "Sample Note " + this.count,
       content : "This is the note paragraph"
     }
     this.setState({notes: [...this.state.notes, newNode]})

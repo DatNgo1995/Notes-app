@@ -21,7 +21,6 @@ export class EditMode extends Component{
  
     return (
         <form >
-
             <input type="text" ref = {this.titleInput} onChange = {this.formOnClick} value={this.props.title}></input>
             <textarea ref = {this.content} onChange = {this.formOnClick} value={this.props.content}></textarea>
         </form>
