@@ -9,7 +9,7 @@ export const notes = (state = [] ,action) => {
                 date: new Date().toString(),
                 title: "Sample Note",
                 content: " This is the note paragraph",
-                mode: "edit"
+                mode: "view"
               }
         ]
 
