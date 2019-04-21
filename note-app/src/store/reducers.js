@@ -15,8 +15,10 @@ export const notes = (state = [] ,action) => {
 
         case "updateNote":
         {
-            let newState = state;
-            newState[action.number-1] = { title : action.title, content :action.content }
+            let newState = state.slice();
+            console.log(action)
+            newState[action.payload.number] = {...newState[action.payload.number], title : action.payload.title, content :action.payload.content }
+            console.log(newState)
             return newState;
         }
         
@@ -26,7 +28,7 @@ export const notes = (state = [] ,action) => {
 
         case "updateMode": 
         {
-            let newState = state;
+            let newState = state.slice();
             console.log(newState[0],action.payload)
             newState[action.payload].mode  = newState[action.payload].mode === 'view' ? 'edit' : 'view'
             return newState
